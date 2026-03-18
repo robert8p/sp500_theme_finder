@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S&P 500 Same-Day +1% Indicator Theme Finder</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <h1>S&amp;P 500 Same-Day +1% Indicator Theme Finder</h1>
+      <p class="subtitle">Intraday Alpaca ingestion, feature engineering, theme mining, validation, and exportable research artifacts.</p>
+    </div>
+    <button id="runBtn">Run analysis</button>
+  </header>
+
+  <main>
+    <section class="card" id="overviewCard">
+      <h2>Overview</h2>
+      <div id="overviewGrid" class="grid two"></div>
+      <div class="notice">
+        <strong>Bias disclosures:</strong>
+        <ul id="warnings"></ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Run Analysis</h2>
+      <div id="statusMeta" class="grid three"></div>
+      <pre id="logs"></pre>
+    </section>
+
+    <section class="card">
+      <h2>Theme Results</h2>
+      <div class="tableWrap"><table id="themesTable"></table></div>
+    </section>
+
+    <section class="card">
+      <h2>Indicator Explorer</h2>
+      <div class="grid two">
+        <div>
+          <h3>Feature importance</h3>
+          <div class="tableWrap"><table id="featureTable"></table></div>
+        </div>
+        <div>
+          <h3>Interaction importance</h3>
+          <div class="tableWrap"><table id="interactionTable"></table></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Validation</h2>
+      <div class="tableWrap"><table id="validationTable"></table></div>
+    </section>
+
+    <section class="card">
+      <h2>Time of Day Analysis</h2>
+      <div class="tableWrap"><table id="todTable"></table></div>
+    </section>
+
+    <section class="card">
+      <h2>False Positive Analysis</h2>
+      <div class="tableWrap"><table id="fpTable"></table></div>
+    </section>
+
+    <section class="card">
+      <h2>Downloads</h2>
+      <ul id="downloads"></ul>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

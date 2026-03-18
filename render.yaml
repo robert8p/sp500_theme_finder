@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: sp500-theme-finder
+    env: python
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    disk:
+      name: sp500-theme-disk
+      mountPath: /opt/render/project/src/data
+      sizeGB: 10
+    envVars:
+      - key: DATA_DIR
+        value: /opt/render/project/src/data
+      - key: MODEL_DIR
+        value: /opt/render/project/src/data/models
+      - key: CACHE_DIR
+        value: /opt/render/project/src/data/cache
+      - key: EXPORT_DIR
+        value: /opt/render/project/src/data/exports
+      - key: STATUS_FILE
+        value: /opt/render/project/src/data/status.json
+      - key: DATA_INTERVAL
+        value: 5Min
+      - key: LOOKBACK_MONTHS
+        value: 6
+      - key: TARGET_PCT
+        value: 0.01
+      - key: MIN_THEME_SAMPLES
+        value: 50
